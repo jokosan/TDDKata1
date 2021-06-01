@@ -78,19 +78,16 @@ namespace TddKata1.Test
             Assert.Equal(3, result);
         }
 
-        //[Fact]
-        //public void TddKata1_StringCalculator_negativeNumberThrowsAnException()
-        //{
-        //    // Arrange
-        //    Program program = new Program();
-        //    string numberString = "1,-2";
+        [Fact]
+        public void TddKata1_StringCalculator_negativeNumberThrowsAnException()
+        {
+            // Arrange
+            string numberString = "-2";
 
-        //    // Act
-        //    int result = program.Add(numberString);
-
-        //    // Assert
-        //    Assert.Equal(3, result);
-        //}
+            // Act
+            var exception = Assert.Throws<StringCalculatorException>(() => _calculator.Add(numberString));
+            Assert.Equal("negatives not allowed -2", exception.Message);
+        }
 
         [Fact]
         public void Add_NumbersBiggerThan1000Ignored_returnValue2()
