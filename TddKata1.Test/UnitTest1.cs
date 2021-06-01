@@ -7,7 +7,7 @@ namespace TddKata1.Test
     public class UnitTest1
     {
         [Fact]
-        public void StringCalculatorEmptyLine()
+        public void TddKata1_StringCalculator_EmptyLine()
         {
             // Arrange
             Program program = new Program();
@@ -17,11 +17,11 @@ namespace TddKata1.Test
             int result = program.Add(numberString);
 
             // Assert
-            Assert.Equal(0, result) ;
+            Assert.Equal(0, result);
         }
 
         [Fact]
-        public void StringCalculatorTwoMeanings()
+        public void TddKata1_StringCalculator_TwoMeanings()
         {
             // Arrange
             Program program = new Program();
@@ -35,7 +35,7 @@ namespace TddKata1.Test
         }
 
         [Fact]
-        public void StringCalculatorUnknownAmountOfNumbers()
+        public void TddKata1_StringCalculator_UnknownAmountOfNumbers()
         {
             // Arrange
             Program program = new Program();
@@ -46,6 +46,20 @@ namespace TddKata1.Test
 
             // Assert
             Assert.Equal(120, result);
+        }
+
+        [Fact]
+        public void TddKata1_StringCalculator_InsteadOfCommas()
+        {  // Arrange
+            Program program = new Program();
+            string numberString = "1\n2,3";
+
+            // Act
+            int result = program.Add(numberString);
+
+            // Assert
+            Assert.Equal(6, result);
+
         }
     }
 }

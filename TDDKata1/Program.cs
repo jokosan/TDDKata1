@@ -21,7 +21,8 @@ namespace TDDKata1
         {
             if (numbers != "")
             {
-                string[] subs = numbers.Split(',');
+                var separators = new char[] { ',', '\n', };
+                string[] subs = numbers.Split(separators);
                 var subsInt = new List<int>();
 
                 foreach (var item in subs)
