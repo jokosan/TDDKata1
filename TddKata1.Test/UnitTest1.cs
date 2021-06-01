@@ -75,5 +75,61 @@ namespace TddKata1.Test
             // Assert
             Assert.Equal(3, result);
         }
+
+        //[Fact]
+        //public void TddKata1_StringCalculator_negativeNumberThrowsAnException()
+        //{
+        //    // Arrange
+        //    Program program = new Program();
+        //    string numberString = "1,-2";
+
+        //    // Act
+        //    int result = program.Add(numberString);
+
+        //    // Assert
+        //    Assert.Equal(3, result);
+        //}
+
+        [Fact]
+        public void TddKata1_StringCalculator_NumbersBiggerThan1000Ignored()
+        {
+            // Arrange
+            Program program = new Program();
+            string numberString = "1001, 2";
+
+            // Act
+            int result = program.Add(numberString);
+
+            // Assert
+            Assert.Equal(2, result);
+        }
+
+        [Fact]
+        public void TddKata1_StringCalculator_AllowMultipleDelimiters()
+        {
+            // Arrange
+            Program program = new Program();
+            string numberString = "//[***]\n1***2***3";
+
+            // Act
+            int result = program.Add(numberString);
+
+            // Assert
+            Assert.Equal(6, result);
+        }
+
+        [Fact]
+        public void TddKata1_StringCalculator_DelimitersCanBeOfAnyLength()
+        {
+            // Arrange
+            Program program = new Program();
+            string numberString = "//[*][%]\n1*2%3";
+
+            // Act
+            int result = program.Add(numberString);
+
+            // Assert
+            Assert.Equal(6, result);
+        }
     }
 }

@@ -21,13 +21,13 @@ namespace TDDKata1
         {
             if (numbers != "")
             {
-                var separators = new char[] { ',', '\n', '/', ';', ' ' };
-                string[] subs = numbers.Split(separators);
+                var separators = new char[] { ',', '\n', '/', ';', ' ', '*', '%', '[', ']' };
+                string[] subs = numbers.Split(separators);               
                 var subsInt = new List<int>();
 
                 foreach (var item in subs)
                 {
-                    if (item != "")
+                    if (item != "" &&  1000 > Convert.ToInt32(item))
                         subsInt.Add(Convert.ToInt32(item));
                 }
 
