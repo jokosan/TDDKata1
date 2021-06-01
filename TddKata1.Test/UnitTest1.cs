@@ -50,7 +50,8 @@ namespace TddKata1.Test
 
         [Fact]
         public void TddKata1_StringCalculator_InsteadOfCommas()
-        {  // Arrange
+        {  
+            // Arrange
             Program program = new Program();
             string numberString = "1\n2,3";
 
@@ -59,7 +60,20 @@ namespace TddKata1.Test
 
             // Assert
             Assert.Equal(6, result);
+        }
 
+        [Fact]
+        public void TddKata1_StringCalculator_SupportDifferentDelimiters()
+        { 
+            // Arrange
+            Program program = new Program();
+            string numberString = "//;\n1;2";
+
+            // Act
+            int result = program.Add(numberString);
+
+            // Assert
+            Assert.Equal(3, result);
         }
     }
 }

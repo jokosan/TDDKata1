@@ -17,17 +17,18 @@ namespace TDDKata1
 
         //public string[]
 
-        public  int Add(string numbers)
+        public int Add(string numbers)
         {
             if (numbers != "")
             {
-                var separators = new char[] { ',', '\n', };
+                var separators = new char[] { ',', '\n', '/', ';', ' ' };
                 string[] subs = numbers.Split(separators);
                 var subsInt = new List<int>();
 
                 foreach (var item in subs)
                 {
-                    subsInt.Add(Convert.ToInt32(item));
+                    if (item != "")
+                        subsInt.Add(Convert.ToInt32(item));
                 }
 
                 return subsInt.Sum();
@@ -35,7 +36,7 @@ namespace TDDKata1
             else
             {
                 return 0;
-            }            
+            }
         }
     }
 }
