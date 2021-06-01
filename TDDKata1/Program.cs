@@ -14,7 +14,5 @@ namespace TDDKata1
             Console.WriteLine(stringCalculator.Add(Console.ReadLine()));
             Console.ReadLine();
         }
-
-      
     }
 }
