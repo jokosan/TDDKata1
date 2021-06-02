@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDKata1", "TDDKata1\TDDKat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestTDDKata1", "UnitTestTDDKata1\UnitTestTDDKata1.csproj", "{52174244-7EB9-40EB-B732-C4D1B9099C8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TddKata1.Test", "TddKata1.Test\TddKata1.Test.csproj", "{8D00723A-BBE5-4F2A-9E8E-2B46723BF06F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TddKata1.Tests", "TddKata1.Test\TddKata1.Tests.csproj", "{8D00723A-BBE5-4F2A-9E8E-2B46723BF06F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

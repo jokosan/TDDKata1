@@ -69,7 +69,7 @@ namespace TddKata1.Test
         public void Add_SupportDifferentDelimiters_ReturnSumOfAllNumbers()
         { 
             // Arrange
-            string numberString = "//;\n1;2";
+            string numberString = ";\n1;2";
 
             // Act
             int result = _calculator.Add(numberString);
@@ -79,7 +79,7 @@ namespace TddKata1.Test
         }
 
         [Fact]
-        public void TddKata1_StringCalculator_ThrowsArgumentExceptionWithNegativeValueInMessage()
+        public void Add_StringCalculator_ThrowsException()
         {
             // Arrange
             string numberString = "-2";
@@ -93,7 +93,7 @@ namespace TddKata1.Test
         public void Add_NumbersBiggerThan1000Ignored_ReturnSumOfAllNumbers()
         {
             // Arrange
-            string numberString = "1001, 2";
+            string numberString = "//j\n1001j2";
 
             // Act
             int result = _calculator.Add(numberString);
@@ -106,7 +106,7 @@ namespace TddKata1.Test
         public void Add_AllowMultipleDelimiters_ReturnSumOfAllNumbers()
         {
             // Arrange
-            string numberString = "//[***]\n1***2***3";
+            string numberString = "//[&&&]\n1&&&2&&&3";
 
             // Act
             int result = _calculator.Add(numberString);
@@ -119,7 +119,7 @@ namespace TddKata1.Test
         public void Add_DelimitersCanBeOfAnyLength_ReturnSumOfAllNumbers()
         {
             // Arrange
-            string numberString = "//[*][%]\n1*2%3";
+            string numberString = "//[]][o]\n1]2o3";
 
             // Act
             int result = _calculator.Add(numberString);
