@@ -23,7 +23,6 @@ namespace TDDKata1
                     {
                         subsInt.Add(Convert.ToInt32(item));
                     }
-
                 }
 
                 Validate(subsInt);

@@ -14,7 +14,7 @@ namespace TddKata1.Test
         }
 
         [Fact]
-        public void Add_EmptyLine_returnValue0()
+        public void Add_EmptyLine_ReturnZero()
         {
             // Arrange      
             string numberString = "";
@@ -40,7 +40,7 @@ namespace TddKata1.Test
         //}
 
         [Fact]
-        public void Add_UnknownAmountOfNumbers_returnValue10()
+        public void Add_UnknownAmountOfNumbers_ReturnSumOfAllNumbers()
         {
             // Arrange
             string numberString = "1,2,3,4";
@@ -53,7 +53,7 @@ namespace TddKata1.Test
         }
 
         [Fact]
-        public void Add_InsteadOfCommas_returnValue6()
+        public void Add_InsteadOfCommas_ReturnSumOfAllNumbers()
         {  
             // Arrange
             string numberString = "1\n2,3";
@@ -66,7 +66,7 @@ namespace TddKata1.Test
         }
 
         [Fact]
-        public void Add_SupportDifferentDelimiters_returnValu3()
+        public void Add_SupportDifferentDelimiters_ReturnSumOfAllNumbers()
         { 
             // Arrange
             string numberString = "//;\n1;2";
@@ -79,7 +79,7 @@ namespace TddKata1.Test
         }
 
         [Fact]
-        public void TddKata1_StringCalculator_negativeNumberThrowsAnException()
+        public void TddKata1_StringCalculator_ThrowsArgumentExceptionWithNegativeValueInMessage()
         {
             // Arrange
             string numberString = "-2";
@@ -90,7 +90,7 @@ namespace TddKata1.Test
         }
 
         [Fact]
-        public void Add_NumbersBiggerThan1000Ignored_returnValue2()
+        public void Add_NumbersBiggerThan1000Ignored_ReturnSumOfAllNumbers()
         {
             // Arrange
             string numberString = "1001, 2";
@@ -103,7 +103,7 @@ namespace TddKata1.Test
         }
 
         [Fact]
-        public void Add_AllowMultipleDelimiters_returnValue6()
+        public void Add_AllowMultipleDelimiters_ReturnSumOfAllNumbers()
         {
             // Arrange
             string numberString = "//[***]\n1***2***3";
@@ -116,7 +116,7 @@ namespace TddKata1.Test
         }
 
         [Fact]
-        public void Add_DelimitersCanBeOfAnyLength_returnValue6()
+        public void Add_DelimitersCanBeOfAnyLength_ReturnSumOfAllNumbers()
         {
             // Arrange
             string numberString = "//[*][%]\n1*2%3";
