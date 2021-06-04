@@ -4,21 +4,22 @@ using TDDKata1;
 using Moq;
 using System.Threading;
 using System.IO;
-using TDDKata1.Wrapper;
+using TDDKata1.Contract;
 
 namespace TddKata1.Tests
 {
-    public class StartCalculatorTests
+    public class StartCalculatorTestsInterface
     {
      
-        private Mock<IUserInterface> startCalculatorMock = new Mock<IUserInterface>();
+        private Mock<IUserInteraction> startCalculatorMock = new Mock<IUserInteraction>();
 
+        #region Startessage
         [Fact]
         public void StartInfo_InvitationsToStartWork_valueFalse()
         {
             // Arrange   
             bool workStatus = false;
-            ConsoleWrappers consoleWrappers = new ConsoleWrappers(startCalculatorMock.Object);
+            ConsoleWrappersInterface consoleWrappers = new ConsoleWrappersInterface(startCalculatorMock.Object);
 
             // Act
             startCalculatorMock.Setup(p => p.StartInfo(workStatus)).Verifiable();
@@ -29,11 +30,23 @@ namespace TddKata1.Tests
         }
 
         [Fact]
+        public void StartInfo_InvitationsToStartWork_Startessage() // ????????
+        {
+            // Arrange   
+            string message = "Enter comma separated numbers (enter to exit):";
+            ConsoleWrappersInterface consoleWrappers = new ConsoleWrappersInterface(startCalculatorMock.Object);
+
+            Assert.True(consoleWrappers.ValidateMessage(message));
+        }
+
+        #endregion
+
+        [Fact]
         public void ConfirmActions_Keystrokes_KeyEnterReturnTrue()
         {
             // Arrange   
             bool keyEnter = true;
-            ConsoleWrappers consoleWrappers = new ConsoleWrappers(startCalculatorMock.Object);
+            ConsoleWrappersInterface consoleWrappers = new ConsoleWrappersInterface(startCalculatorMock.Object);
 
             // Act
             startCalculatorMock.Setup(p => p.ConfirmActions()).Returns(keyEnter);
@@ -43,12 +56,13 @@ namespace TddKata1.Tests
             Assert.Equal(keyEnter, result);
         }
 
+        #region MessageChoiceOfAction
         [Fact]
         public void StartInfo_ContinueWork_ValueTrue()
         {
             // Arrange   
             bool workStatus = true;
-            ConsoleWrappers consoleWrappers = new ConsoleWrappers(startCalculatorMock.Object);
+            ConsoleWrappersInterface consoleWrappers = new ConsoleWrappersInterface(startCalculatorMock.Object);
 
             // Act
             startCalculatorMock.Setup(p => p.StartInfo(workStatus)).Verifiable();
@@ -59,11 +73,22 @@ namespace TddKata1.Tests
         }
 
         [Fact]
+        public void StartInfo_InvitationsToStartWork_MessageChoiceOfAction() // ????????
+        {
+            // Arrange   
+            string message = "you can enter other numbers (enter to exit)?";
+            ConsoleWrappersInterface consoleWrappers = new ConsoleWrappersInterface(startCalculatorMock.Object);
+
+            Assert.True(consoleWrappers.ValidateMessage(message));
+        }
+        #endregion
+
+        [Fact]
         public void UserValurInput_CustomValueOutput_ReturnUserString()
         {
             // Arrange   
             string customValueOutput = "2,5";
-            ConsoleWrappers consoleWrappers = new ConsoleWrappers(startCalculatorMock.Object);
+            ConsoleWrappersInterface consoleWrappers = new ConsoleWrappersInterface(startCalculatorMock.Object);
 
             // Act
             startCalculatorMock.Setup(p => p.UserValueInput()).Returns(customValueOutput);
@@ -93,7 +118,7 @@ namespace TddKata1.Tests
         {
             // Arrange   
             int resultSumUser = 7;
-            ConsoleWrappers consoleWrappers = new ConsoleWrappers(startCalculatorMock.Object);
+            ConsoleWrappersInterface consoleWrappers = new ConsoleWrappersInterface(startCalculatorMock.Object);
 
             // Act
             startCalculatorMock.Setup(p => p.ResultValue(resultSumUser)).Verifiable();
@@ -103,13 +128,12 @@ namespace TddKata1.Tests
             startCalculatorMock.Verify(w => w.ResultValue(It.Is<int>(s => s == resultSumUser)), Times.Once);
         }
 
-
         [Fact]
         public void ConfirmActions_Keystrokes_KeyEnterReturnFalse()
         {
             // Arrange   
             bool keyEsc = false;
-            ConsoleWrappers consoleWrappers = new ConsoleWrappers(startCalculatorMock.Object);
+            ConsoleWrappersInterface consoleWrappers = new ConsoleWrappersInterface(startCalculatorMock.Object);
 
             // Act
             startCalculatorMock.Setup(p => p.ConfirmActions()).Returns(keyEsc);

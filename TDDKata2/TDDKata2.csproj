@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CFDA02D9-0EFE-410B-A23B-123132FAE7CD}</ProjectGuid>
+    <ProjectGuid>{0C31D702-CDE8-40B8-AA3B-FFDC2C7CCC9D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TDDKata1</RootNamespace>
-    <AssemblyName>TDDKata1</AssemblyName>
+    <RootNamespace>TDDKata2</RootNamespace>
+    <AssemblyName>TDDKata2</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,8 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Xpo.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,17 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassConstant.cs" />
-    <Compile Include="Contract\IUserInteraction.cs" />
+    <Compile Include="ConsoleVirtual.cs" />
+    <Compile Include="ConsoleWrappers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StringCalculator.cs" />
-    <Compile Include="StringCalculatorException.cs" />
-    <Compile Include="UserInteraction.cs" />
-    <Compile Include="ConsoleWrappers\ConsoleWrappersInterface.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TDDKata1\TDDKata1.csproj">
+      <Project>{cfda02d9-0efe-410b-a23b-123132fae7cd}</Project>
+      <Name>TDDKata1</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

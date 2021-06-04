@@ -11,11 +11,12 @@ namespace TDDKata1
 
         static void Main(string[] args)
         {
-            var user = new UserInterface();
+            var user = new UserInteraction();
             var stringCalculator = new StringCalculator();
-            bool status = false;
 
-            user.StartInfo(status);
+           // bool status = false;
+
+            user.StartInfo(ClassConstant.MessageStart);
 
             var keyInfo = user.ConfirmActions();
 
@@ -23,10 +24,10 @@ namespace TDDKata1
             {
                 do
                 {
-                    status = true;
+                   // status = true;
                     string UserString = user.UserValueInput();
                     user.ResultValue(stringCalculator.Add(UserString));
-                    user.StartInfo(status);
+                    user.StartInfo(ClassConstant.MessageChoiceOfAction);
                     keyInfo = user.ConfirmActions();
 
                     if (keyInfo)
@@ -37,6 +38,5 @@ namespace TDDKata1
                 } while (keyInfo);
             }
         }
-
     }
 }
