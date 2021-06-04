@@ -48,7 +48,6 @@
     <Compile Include="IUserInterface.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StartCalculator.cs" />
     <Compile Include="StringCalculator.cs" />
     <Compile Include="StringCalculatorException.cs" />
     <Compile Include="UserInterface.cs" />
