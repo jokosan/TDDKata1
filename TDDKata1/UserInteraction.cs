@@ -25,9 +25,9 @@ namespace TDDKata1
         public bool ConfirmActions()
         {
             if (Console.ReadKey(true).Key == ConsoleKey.Enter)
-                return true;
-            else
                 return false;
+            else
+                return true;
         }
 
         public string UserValueInput()

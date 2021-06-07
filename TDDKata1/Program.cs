@@ -24,16 +24,10 @@ namespace TDDKata1
             {
                 do
                 {
-                   // status = true;
                     string UserString = user.UserValueInput();
                     user.ResultValue(stringCalculator.Add(UserString));
                     user.StartInfo(ClassConstant.MessageChoiceOfAction);
                     keyInfo = user.ConfirmActions();
-
-                    if (keyInfo)
-                    {
-                        Console.WriteLine("User numbers");
-                    }
 
                 } while (keyInfo);
             }

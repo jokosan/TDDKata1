@@ -106,7 +106,8 @@ namespace TddKata1.Test
         public void Add_AllowMultipleDelimiters_ReturnSumOfAllNumbers()
         {
             // Arrange
-            string numberString = "//[&&&]\n1&&&2&&&3";
+            // string numberString = "//[&&&]\n1&&&2&&&3";
+            string numberString = "//[r]]\n1r2]3";
 
             // Act
             int result = _calculator.Add(numberString);
@@ -119,7 +120,7 @@ namespace TddKata1.Test
         public void Add_DelimitersCanBeOfAnyLength_ReturnSumOfAllNumbers()
         {
             // Arrange
-            string numberString = "//[]][o]\n1]2o3";
+            string numberString = "//[]][o]]\n1o2o]3";
 
             // Act
             int result = _calculator.Add(numberString);

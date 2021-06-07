@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TDDKata1
 {
@@ -20,12 +18,41 @@ namespace TDDKata1
 
             var subs
                = numbers
-                   .Split(delimiters, StringSplitOptions.RemoveEmptyEntries)
-                   .Where(stringNumber => Convert.ToInt32(stringNumber) <= MaxNumberToCalculate)
-                   .Select(stringNumber => Convert.ToInt32(stringNumber));
+                   .Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
 
-            Validate(subs);
-            return subs.Sum();
+            return ValidateInt(subs, delimiters);
+        }
+
+        public int ValidateInt(string[] number, string[] delimiters)
+        {
+            var listIntResult = new List<int>();
+            int result;
+            string resultDelimiters = null;
+
+            foreach (var itemChar in delimiters)
+                resultDelimiters += itemChar;
+
+            char[] charDelimiters = resultDelimiters.ToCharArray();
+
+            foreach (var item in number)
+            {
+                if (Int32.TryParse(item, out result) == false)
+                {
+                    var StringSplit = item.Split(charDelimiters, StringSplitOptions.RemoveEmptyEntries)
+                        .Where(x => Convert.ToInt32(x) <= MaxNumberToCalculate)
+                        .Select(x => Convert.ToInt32(x));
+
+                    listIntResult.Add(StringSplit.Sum());
+                }
+                else
+                {
+                    if (result <= MaxNumberToCalculate)
+                        listIntResult.Add(result);
+                }
+            }
+
+            Validate(listIntResult);
+            return listIntResult.Sum();
         }
 
         private void Validate(IEnumerable<int> listInt)
@@ -33,8 +60,7 @@ namespace TDDKata1
             var negativeNumbers
                = listInt
                   .Where(number => number < 0)
-                  .Select(number => number)
-                  .ToList();
+                  .Select(number => number);
 
             if (negativeNumbers.Any(x => x < 0))
                 throw new StringCalculatorException($"negatives not allowed {string.Join(" ", listInt.Where(x => x < 0))}");
@@ -66,6 +92,7 @@ namespace TDDKata1
 
                 return delimiterData
                         .Split(new string[] { DelimiterListSeperator }, StringSplitOptions.RemoveEmptyEntries);
+
             }
 
             const int DefaultDelimiterLength = 1;
@@ -73,6 +100,8 @@ namespace TDDKata1
 
             return new string[] { delimiterString };
         }
+
+
 
         private string RemoveDelimiterDataFrom(string numbers)
         {
