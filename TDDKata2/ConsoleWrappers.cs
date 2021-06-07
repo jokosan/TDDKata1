@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TDDKata2
 {
-    public class ConsoleWrappers
+    public class ConsoleWrappers 
     {
         private readonly ConsoleVirtual _consoleVirtual;
 

@@ -26,6 +26,8 @@ namespace TDDKata1
         public string UserValueInput()
             => _userInterface.UserValueInput();
 
+
+
         public void ResultValue(int value)
         {
             _userInterface.ResultValue(value);
