@@ -12,9 +12,9 @@ namespace TDDKata1
         public void StartInfo(bool status)
         {           
             if (status)
-                Console.WriteLine("you can enter other numbers (enter to exit)?");
+                Console.WriteLine(ClassConstant.MessageChoiceOfAction);
             else
-                Console.WriteLine("Enter comma separated numbers (enter to exit):");
+                Console.WriteLine(ClassConstant.MessageStart);
         }
 
         public void StartInfo(string message)
