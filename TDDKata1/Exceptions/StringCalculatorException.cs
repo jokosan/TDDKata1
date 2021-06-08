@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TDDKata1
+namespace TDDKata1.Exceptions
 {
     public class StringCalculatorException : Exception
     {

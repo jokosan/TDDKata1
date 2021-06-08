@@ -1,6 +1,7 @@
 using System;
 using Xunit;
 using TDDKata1;
+using TDDKata1.Exceptions;
 
 namespace TddKata1.Test
 {
@@ -107,20 +108,20 @@ namespace TddKata1.Test
         {
             // Arrange
             // string numberString = "//[&&&]\n1&&&2&&&3";
-            string numberString = "//[r]]\n1r2]3";
+            string numberString = "//[r]]\n7r]6";
 
             // Act
             int result = _calculator.Add(numberString);
 
             // Assert
-            Assert.Equal(6, result);
+            Assert.Equal(13, result);
         }
 
         [Fact]
         public void Add_DelimitersCanBeOfAnyLength_ReturnSumOfAllNumbers()
         {
             // Arrange
-            string numberString = "//[]][o]]\n1o2o]3";
+            string numberString = "//[]][o]\n1o2o]3";
 
             // Act
             int result = _calculator.Add(numberString);
