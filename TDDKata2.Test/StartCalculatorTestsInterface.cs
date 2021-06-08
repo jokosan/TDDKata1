@@ -1,5 +1,4 @@
 using Moq;
-using System;
 using TDDKata1;
 using TDDKata2.Constants;
 using TDDKata2.Contract;
@@ -9,7 +8,7 @@ namespace TDDKata2.Test
 {
     public class StartCalculatorTestsInterface
     {
-      private UserConsole _userConsole;
+        private UserConsole _userConsole;
 
         [Fact]
         public void Start_StartMessage_Message()
@@ -17,7 +16,7 @@ namespace TDDKata2.Test
             // Arrange
             Mock<StringCalculator> stringCalculatorMock = new Mock<StringCalculator>();
             Mock<IUserInteraction> startCalculatorMock = new Mock<IUserInteraction>();
-          
+
 
             startCalculatorMock.Setup(x => x.UserValueInput())
                     .Returns("");
@@ -55,7 +54,7 @@ namespace TDDKata2.Test
             _userConsole.Start();
 
             // Asert
-            startCalculatorMock.Verify(x => x.Info(MessageUsers.MessageChoiceOfAction),Times.Exactly(2));
+            startCalculatorMock.Verify(x => x.Info(MessageUsers.MessageChoiceOfAction), Times.Exactly(2));
         }
 
         [Fact]

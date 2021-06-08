@@ -1,7 +1,6 @@
-using System;
-using Xunit;
 using TDDKata1;
 using TDDKata1.Exceptions;
+using Xunit;
 
 namespace TddKata1.Test
 {
@@ -55,7 +54,7 @@ namespace TddKata1.Test
 
         [Fact]
         public void Add_InsteadOfCommas_ReturnSumOfAllNumbers() // ???
-        {  
+        {
             // Arrange
             string numberString = "1\n2,3";
 
@@ -67,10 +66,10 @@ namespace TddKata1.Test
         }
 
         [Fact]
-        public void Add_SupportDifferentDelimiters_ReturnSumOfAllNumbers()
-        { 
+        public void Add_DelimiterShould_ReturnSumOfAllNumbers()
+        {
             // Arrange
-            string numberString = ";\n1;2";
+            string numberString = "//;\n1;2";
 
             // Act
             int result = _calculator.Add(numberString);
@@ -104,7 +103,7 @@ namespace TddKata1.Test
         }
 
         [Fact]
-        public void Add_AllowMultipleDelimiters_ReturnSumOfAllNumbers()
+        public void Add_RandomSeparator_ReturnSumOfAllNumbers()
         {
             // Arrange
             // string numberString = "//[&&&]\n1&&&2&&&3";
@@ -118,7 +117,7 @@ namespace TddKata1.Test
         }
 
         [Fact]
-        public void Add_DelimitersCanBeOfAnyLength_ReturnSumOfAllNumbers()
+        public void Add_BracketDelimiter_ReturnSumOfAllNumbers()
         {
             // Arrange
             string numberString = "//[]][o]\n1o2o]3";

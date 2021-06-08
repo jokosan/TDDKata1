@@ -28,7 +28,7 @@ namespace TDDKata1
         }
 
         private bool IsNullEmptyOrWhitespaceFilled(string numbers)
-            => string.IsNullOrEmpty(numbers) || string.IsNullOrWhiteSpace(numbers);        
+            => string.IsNullOrEmpty(numbers) || string.IsNullOrWhiteSpace(numbers);
 
         private void Validate(IEnumerable<int> listInt)
         {

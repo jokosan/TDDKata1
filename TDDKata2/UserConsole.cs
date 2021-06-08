@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TDDKata1;
+﻿using TDDKata1;
 using TDDKata2.Constants;
 using TDDKata2.Contract;
 
@@ -33,9 +28,9 @@ namespace TDDKata2
             {
                 _userInteraction.Info(MessageUsers.MessageChoiceOfAction);
                 UserString = _userInteraction.UserValueInput();
-                
+
                 if (UserString == "") break;
-               
+
                 _userInteraction.Info($"{MessageUsers.MessageResult} { _stringCalculator.Add(UserString)}");
             }
         }

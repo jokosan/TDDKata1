@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TDDKata1
 {
@@ -12,7 +8,7 @@ namespace TDDKata1
         {
             var stringCalculator = new StringCalculator();
             stringCalculator.Add(Console.ReadLine());
-            
+
             Console.ReadLine();
         }
     }
