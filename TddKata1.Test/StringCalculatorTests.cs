@@ -107,8 +107,7 @@ namespace TddKata1.Test
         {
             // Arrange
             // string numberString = "//[&&&]\n1&&&2&&&3";
-            string numberString = "//[r]]\n7r]6";
-
+            string numberString = "//[r]]\n7r]6";sdfsfsdfsd
             // Act
             int result = _calculator.Add(numberString);
 
