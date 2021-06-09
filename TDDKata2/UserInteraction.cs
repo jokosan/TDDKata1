@@ -12,6 +12,5 @@ namespace TDDKata2
 
         public string UserValueInput()
             => Console.ReadLine();
-
     }
 }

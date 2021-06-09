@@ -13,7 +13,7 @@ namespace TddKata1.Test
             _calculator = new StringCalculator();
         }
 
-        [Fact]
+        [Fact]        
         public void Add_EmptyLine_ReturnZero()
         {
             // Arrange      
@@ -25,19 +25,6 @@ namespace TddKata1.Test
             // Assert
             Assert.Equal(0, result);
         }
-
-        //[Fact]
-        //public void Add_TwoMeanings_returnValue3()
-        //{
-        //    // Arrange
-        //    string numberString = "1,2";
-
-        //    // Act
-        //    int result = calculator.Add(numberString);
-
-        //    // Assert
-        //    Assert.Equal(3, result);
-        //}
 
         [Fact]
         public void Add_UnknownAmountOfNumbers_ReturnSumOfAllNumbers()
@@ -106,8 +93,7 @@ namespace TddKata1.Test
         public void Add_RandomSeparator_ReturnSumOfAllNumbers()
         {
             // Arrange
-            // string numberString = "//[&&&]\n1&&&2&&&3";
-            string numberString = "//[r]]\n7r]6";sdfsfsdfsd
+            string numberString = "//[r]]\n7r]6";
             // Act
             int result = _calculator.Add(numberString);
 
@@ -126,6 +112,22 @@ namespace TddKata1.Test
 
             // Assert
             Assert.Equal(6, result);
+        }
+
+        [Fact]
+        public void Add_TwoInputParameters_ReturnTheSumOfTwoParameters()
+        {
+            // Arrange
+            string numberStringOne = "//[r]]\n7r]6";
+            string numberStringTwo = "//[]][o]\n1o2o]3";
+
+            // Act
+            int resultOne = _calculator.Add(numberStringOne);
+            int resultTwo = _calculator.Add(numberStringTwo);
+
+            // Assert
+            Assert.Equal(13, resultOne);
+            Assert.Equal(6, resultTwo);
         }
     }
 }
