@@ -6,7 +6,7 @@ using Xunit;
 
 namespace TDDKata2.Test
 {
-    public class StartCalculatorTestsInterface
+    public class UserConsoleTest
     {
         private UserConsole _userConsole;
 
@@ -16,7 +16,6 @@ namespace TDDKata2.Test
             // Arrange
             Mock<StringCalculator> stringCalculatorMock = new Mock<StringCalculator>();
             Mock<IUserInteraction> startCalculatorMock = new Mock<IUserInteraction>();
-
 
             startCalculatorMock.Setup(x => x.UserValueInput())
                     .Returns("");
@@ -37,7 +36,6 @@ namespace TDDKata2.Test
         public void Start_EnteringValuesTwice_ReturnValuesTwice()
         {
             // Arrange
-
             Mock<StringCalculator> stringCalculatorMock = new Mock<StringCalculator>();
             Mock<IUserInteraction> startCalculatorMock = new Mock<IUserInteraction>();
 
@@ -61,7 +59,6 @@ namespace TDDKata2.Test
         public void Start_EnteringValuesTwice_GetTheSumOfValuesTwice()
         {
             // Arrange
-
             Mock<StringCalculator> stringCalculatorMock = new Mock<StringCalculator>();
             Mock<IUserInteraction> startCalculatorMock = new Mock<IUserInteraction>();
 
@@ -91,7 +88,6 @@ namespace TDDKata2.Test
             startCalculatorMock.Verify(x => x.Info($"{MessageUsers.MessageResult} {resulFirsttValue}"));
             startCalculatorMock.Verify(x => x.Info($"{MessageUsers.MessageResult} {resultSecondValue}"));
         }
-
     }
 }
 

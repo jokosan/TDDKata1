@@ -24,6 +24,7 @@ namespace TDDKata1
                         .Select(x => Convert.ToInt32(x));
 
             Validate(subs);
+
             return subs.Sum();
         }
 

@@ -26,19 +26,6 @@ namespace TddKata1.Test
             Assert.Equal(0, result);
         }
 
-        //[Fact]
-        //public void Add_TwoMeanings_returnValue3()
-        //{
-        //    // Arrange
-        //    string numberString = "1,2";
-
-        //    // Act
-        //    int result = calculator.Add(numberString);
-
-        //    // Assert
-        //    Assert.Equal(3, result);
-        //}
-
         [Fact]
         public void Add_UnknownAmountOfNumbers_ReturnSumOfAllNumbers()
         {
@@ -106,8 +93,7 @@ namespace TddKata1.Test
         public void Add_RandomSeparator_ReturnSumOfAllNumbers()
         {
             // Arrange
-            // string numberString = "//[&&&]\n1&&&2&&&3";
-            string numberString = "//[r]]\n7r]6";sdfsfsdfsd
+            string numberString = "//[r]]\n7r]6";
             // Act
             int result = _calculator.Add(numberString);
 
